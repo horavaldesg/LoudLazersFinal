@@ -24,7 +24,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if(other.tag == "Enemy")
         {
-            health -= 10;
+            health -= Random.Range(5, 15);
             Destroy(other.gameObject);
         }
     }

@@ -67,22 +67,36 @@ namespace FinerGames.PitchDetector.Demo
             }
             else if (spaceInvaders)
             {
-                if(pitchDetector.Pitch > 0 && pitchDetector.Pitch < 100)
+                if (Input.GetKeyDown(KeyCode.RightArrow))
                 {
-                    Debug.Log("Low");
-                    Debug.Log(player.transform.position.x);
-                    if (player.transform.position.x <= -15)
+                    if (player.transform.position.x == 15)
                     {
-
-                        player.transform.position += new Vector3(5, 0, 0);
+                        move = -move;
                     }
-                    else if (player.transform.position.x >= 15 && player.transform.position.x >= 0)
+                    else if (player.transform.position.x == -15)
                     {
-                        Debug.Log("Right");
-                        player.transform.position += new Vector3(5, 0, 0);
+                        move = -move;
                     }
-                    
+                    player.transform.position += new Vector3(move, 0, 0);
 
+                }
+                if (pitchDetector.Pitch > 0 && pitchDetector.Pitch < 100)
+                {
+                    if (player.transform.position.x == 15)
+                    {
+                        move = -move;
+                    }
+                    else if (player.transform.position.x == -15)
+                    {
+                        move = -move;
+                    }
+                    player.transform.position += new Vector3(move, 0, 0);
+
+
+                }
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    player.GetComponentInChildren<ShootProjectile>().Shoot();
                 }
                 else if (pitchDetector.Pitch >= 100)
                 {

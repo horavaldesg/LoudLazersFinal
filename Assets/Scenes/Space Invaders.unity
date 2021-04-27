@@ -482,6 +482,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7309644680633390427, guid: 5c019022e6f4e49b78442c36c9237404,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 7309644680876999363, guid: 5c019022e6f4e49b78442c36c9237404,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -495,7 +500,7 @@ PrefabInstance:
     - target: {fileID: 7309644680949534558, guid: 5c019022e6f4e49b78442c36c9237404,
         type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7309644680949534559, guid: 5c019022e6f4e49b78442c36c9237404,
         type: 3}
