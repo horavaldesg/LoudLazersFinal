@@ -31,6 +31,8 @@ namespace FinerGames.PitchDetector.Demo
         // Update is called once per frame
         void Update()
         {
+            //show middletone for player
+            //visualize it
             if (endless)
             {
                 Debug.Log(pitchDetector.Pitch);
