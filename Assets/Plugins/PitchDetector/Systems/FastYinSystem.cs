@@ -4,25 +4,25 @@ using FinerGames.PitchDetector;
 
 public class FastYinSystem : ComponentSystem
 {
-    ComponentGroup pitchDetectors;
+    EntityQuery pitchDetectors;
 
     FastYin fastYin;
 
-    protected override void OnCreateManager()
+    protected override void OnCreate()
     {
-        base.OnCreateManager();
+        base.OnCreate();
 
-        var query = new EntityArchetypeQuery()
+        var query = new EntityQueryDesc()
         {
             All = new ComponentType[] { typeof(PitchDetector), },
         };
-        pitchDetectors = GetComponentGroup(query);
+        pitchDetectors = GetEntityQuery(query);
 
         fastYin = new FastYin(44100, 1024);
     }
     protected override void OnUpdate()
     {
-        ForEach((PitchDetector detector) =>
+        Entities.ForEach((PitchDetector detector) =>
         {
             if (detector.Source == null)
                 return;

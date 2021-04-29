@@ -6,22 +6,22 @@ namespace FinerGames.PitchDetector
 {
     public class MicrophoneInputSystem : ComponentSystem
     {
-        ComponentGroup microphoneInputs;
+        EntityQuery microphoneInputs;
 
-        protected override void OnCreateManager()
+        protected override void OnCreate()
         {
-            base.OnCreateManager();
+            base.OnCreate();
 
-            var query = new EntityArchetypeQuery()
+            var query = new EntityQueryDesc()
             {
                 All = new ComponentType[] { typeof(MicrophoneInput), },
             };
-            microphoneInputs = GetComponentGroup(query);
+            microphoneInputs = GetEntityQuery(query);
         }
 
         protected override void OnUpdate()
         {
-            ForEach((MicrophoneInput input) =>
+            Entities.ForEach((MicrophoneInput input) =>
             {
                 if (input.Source == null)
                     return;

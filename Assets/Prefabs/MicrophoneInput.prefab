@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Source: {fileID: 8279696225543643019}
-  DeviceName: 
+  DeviceName: MacBook Pro Microphone
   IsRecording: 1
   SampleRate: 44100
 --- !u!114 &8279696225543643018

@@ -6,19 +6,19 @@ namespace FinerGames.PitchDetector
 {
     public class AutoCorrelationPitchDetectionSystem : ComponentSystem
     {
-        ComponentGroup pitchDetectors;
+        EntityQuery pitchDetectors;
 
         PitchTracker pitchTracker;
 
-        protected override void OnCreateManager()
+        protected override void OnCreate()
         {
-            base.OnCreateManager();
+            base.OnCreate();
 
-            var query = new EntityArchetypeQuery()
+            var query = new EntityQueryDesc()
             {
                 All = new ComponentType[] { typeof(PitchDetector), },
             };
-            pitchDetectors = GetComponentGroup(query);
+            pitchDetectors = GetEntityQuery(query);
 
             pitchTracker = new PitchTracker();
             pitchTracker.SampleRate = 44100;
@@ -26,7 +26,7 @@ namespace FinerGames.PitchDetector
 
         protected override void OnUpdate()
         {
-            ForEach((PitchDetector detector) =>
+            Entities.ForEach((PitchDetector detector) =>
             {
                 if (detector.Source == null)
                     return;

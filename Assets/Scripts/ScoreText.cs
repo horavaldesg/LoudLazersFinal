@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 public class ScoreText : MonoBehaviour
 {
     TextMeshProUGUI text;
@@ -10,7 +11,7 @@ public class ScoreText : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       if(PlayerHealth.health == 100)
+       if(SceneManager.GetActiveScene().name != "Title" && SceneManager.GetActiveScene().name != "GameOver")
         {
             score = 0;
         }
