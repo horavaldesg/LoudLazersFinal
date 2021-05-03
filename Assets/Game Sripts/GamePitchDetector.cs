@@ -8,8 +8,8 @@ namespace FinerGames.PitchDetector.Demo
     public class GamePitchDetector : MonoBehaviour
     {
         [SerializeField]PitchDetector pitchDetector;
-        [SerializeField] int hightPitchCap = 100;
-        [SerializeField] int lowPitchCap = 100;
+        //[SerializeField] int hightPitchCap = 100;
+        //[SerializeField] int lowPitchCap = 100;
         [SerializeField] bool endless;
         [SerializeField] bool spaceInvaders;
         [SerializeField] RectTransform slider;
@@ -39,11 +39,12 @@ namespace FinerGames.PitchDetector.Demo
                 //if (Input.GetKey(KeyCode.Space))
                 //{
                 if (pitchDetector.Pitch > 0 && pitchDetector.Pitch < 100)
-                {   if (slider.transform.position.y <= 278)
-                    {
-                        slider.transform.position = new Vector3(0, slider.transform.position.y - 1, 0); ;
-                    }
-                    Debug.Log("Low");
+                {
+                    //if (slider.transform.position.y <= 278)
+                        //    {
+                        //        slider.transform.position = new Vector3(0, slider.transform.position.y - 1, 0); ;
+                        //    }
+                        Debug.Log("Low");
                     if (player.transform.rotation.y == -45)
                     {
                         constant = rotationValue;
@@ -52,15 +53,15 @@ namespace FinerGames.PitchDetector.Demo
                     {
                         constant = -rotationValue;
                     }
-                    player.transform.Rotate(0, transform.rotation.y + constant, 0);
+                    player.transform.Rotate(0, player.transform.rotation.y + constant, 0);
 
                 }
                 else if (pitchDetector.Pitch >= 100)
                 {
-                    if (slider.transform.position.y >= -278)
-                    {
-                        slider.transform.position = new Vector3(0, slider.transform.position.y + 1, 0);
-                    }
+                    //if (slider.transform.position.y >= -278)
+                    //{
+                    //    slider.transform.position = new Vector3(0, slider.transform.position.y + 1, 0);
+                    //}
                     Debug.Log("High");
                     player.GetComponentInChildren<ShootProjectile>().Shoot();
                 }
