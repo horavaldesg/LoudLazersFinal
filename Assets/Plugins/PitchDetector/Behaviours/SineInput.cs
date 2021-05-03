@@ -53,6 +53,7 @@ namespace FinerGames.PitchDetector
                     audioSource.Stop();
                 }
             }
+          
         }
 
         void OnAudioFilterRead(float[] data, int channels)

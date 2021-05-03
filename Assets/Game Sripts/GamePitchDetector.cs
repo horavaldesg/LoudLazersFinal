@@ -29,16 +29,17 @@ namespace FinerGames.PitchDetector.Demo
         }
 
         // Update is called once per frame
-        void FixedUpdate()
+        void Update()
         {
             //show middletone for player
             //visualize it
+            
             if (endless)
             {
-                //Debug.Log(pitchDetector.Pitch);
-                if(pitchDetector.Pitch > 0)
+                Debug.Log(pitchDetector.Pitch);
+                if (pitchDetector.Pitch > 0)
                 {
-                    pitchDetector.enabled = false;
+                    //pitchDetector.enabled = false;
                 }
 
                 //if (Input.GetKey(KeyCode.Space))
@@ -60,7 +61,7 @@ namespace FinerGames.PitchDetector.Demo
                         constant = -rotationValue;
                     }
                     player.transform.Rotate(0, player.transform.rotation.y + constant, 0);
-                    pitchDetector.enabled = true;
+                    //pitchDetector.enabled = true;
 
                 }
                 else if (pitchDetector.Pitch >= 150)
@@ -70,7 +71,7 @@ namespace FinerGames.PitchDetector.Demo
                     slider.GetComponent<RectTransform>().position = new Vector3(slider.transform.position.x, slider.transform.position.y + 5, slider.transform.position.z);
                     //}
                     //Debug.Log("High");
-                    pitchDetector.enabled = true;
+                    //pitchDetector.enabled = true;
                     player.GetComponentInChildren<ShootProjectile>().Shoot();
                 }
             }
@@ -113,12 +114,13 @@ namespace FinerGames.PitchDetector.Demo
                     player.GetComponentInChildren<ShootProjectile>().Shoot();
                 }
             }
-
-            //}
+            
+            
             /*
             foreach (string notes in hightNotes) {
 
                 if (notes == PitchDsp.GetNoteName(pitchDetector.MidiNote, false, false)){
+                    player.GetComponentInChildren<ShootProjectile>().Shoot();
                     Debug.Log("High: " + PitchDsp.GetNoteName(pitchDetector.MidiNote, false, false));
                     
                 }
@@ -130,9 +132,20 @@ namespace FinerGames.PitchDetector.Demo
                 if(notes == PitchDsp.GetNoteName(pitchDetector.MidiNote, false, false))
                 {
                     Debug.Log("Low: " + PitchDsp.GetNoteName(pitchDetector.MidiNote, false, false));
+
+                    if (player.transform.rotation.y == -45)
+                    {
+                        constant = rotationValue;
+                    }
+                    else if (player.transform.rotation.y == 45)
+                    {
+                        constant = -rotationValue;
+                    }
+                    player.transform.Rotate(0, player.transform.rotation.y + constant, 0);
                 }
             }
             */
+            
         }
     }
 }

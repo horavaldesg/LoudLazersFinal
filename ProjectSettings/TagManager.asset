@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Microphone
+  - Enemy
+  - Low
+  - Loud
+  - Laser
+  - Explosion
   layers:
   - Default
   - TransparentFX
