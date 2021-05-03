@@ -29,22 +29,28 @@ namespace FinerGames.PitchDetector.Demo
         }
 
         // Update is called once per frame
-        void Update()
+        void FixedUpdate()
         {
             //show middletone for player
             //visualize it
             if (endless)
             {
-                Debug.Log(pitchDetector.Pitch);
+                //Debug.Log(pitchDetector.Pitch);
+                if(pitchDetector.Pitch > 0)
+                {
+                    pitchDetector.enabled = false;
+                }
+
                 //if (Input.GetKey(KeyCode.Space))
                 //{
-                if (pitchDetector.Pitch > 0 && pitchDetector.Pitch < 100)
+                if (pitchDetector.Pitch > 0 && pitchDetector.Pitch < 150)
                 {
-                    //if (slider.transform.position.y <= 278)
-                        //    {
-                        //        slider.transform.position = new Vector3(0, slider.transform.position.y - 1, 0); ;
-                        //    }
-                        Debug.Log("Low");
+                    //if (slider.GetComponent<RectTransform>().position.y <= 278)
+                    //{
+                    //    Debug.Log("Down");
+                        slider.GetComponent<RectTransform>().position = new Vector3(slider.transform.position.x, slider.transform.position.y - 5, slider.transform.position.z);
+                    //}
+                    //Debug.Log("Low");
                     if (player.transform.rotation.y == -45)
                     {
                         constant = rotationValue;
@@ -54,15 +60,17 @@ namespace FinerGames.PitchDetector.Demo
                         constant = -rotationValue;
                     }
                     player.transform.Rotate(0, player.transform.rotation.y + constant, 0);
+                    pitchDetector.enabled = true;
 
                 }
-                else if (pitchDetector.Pitch >= 100)
+                else if (pitchDetector.Pitch >= 150)
                 {
                     //if (slider.transform.position.y >= -278)
                     //{
-                    //    slider.transform.position = new Vector3(0, slider.transform.position.y + 1, 0);
+                    slider.GetComponent<RectTransform>().position = new Vector3(slider.transform.position.x, slider.transform.position.y + 5, slider.transform.position.z);
                     //}
-                    Debug.Log("High");
+                    //Debug.Log("High");
+                    pitchDetector.enabled = true;
                     player.GetComponentInChildren<ShootProjectile>().Shoot();
                 }
             }
@@ -105,6 +113,7 @@ namespace FinerGames.PitchDetector.Demo
                     player.GetComponentInChildren<ShootProjectile>().Shoot();
                 }
             }
+
             //}
             /*
             foreach (string notes in hightNotes) {
