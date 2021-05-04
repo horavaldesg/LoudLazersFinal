@@ -6,6 +6,7 @@ public class CollisionCheck : MonoBehaviour
 {
     GameObject audioObj;
     public bool DestroyShip;
+    [SerializeField] ParticleSystem particleSystem;
     // Start is called before the first frame update
     private void Start()
     {
@@ -20,9 +21,12 @@ public class CollisionCheck : MonoBehaviour
                 ScoreText.score += 1;
                 audioObj.GetComponent<AudioSource>().Play();
                 Destroy(this.gameObject);
-                Destroy(other.gameObject);
+                //Instantiate(particleSystem, other.transform.position, other.transform.rotation);
+                other.GetComponentInChildren<ParticleSystem>().Play();
+                other.GetComponent<SpriteRenderer>().enabled = false;
 
-                //Destroy(other.gameObject);
+
+                Destroy(other.gameObject, other.GetComponentInChildren<ParticleSystem>().main.duration);
             }
             else if (other.tag == "Finish")
             {
@@ -34,5 +38,7 @@ public class CollisionCheck : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
+
+    
     
 }

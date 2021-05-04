@@ -125,6 +125,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0b6d22e691bf4067bca6d9fa7769ffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DestroyShip: 0
+  particleSystem: {fileID: 6604874025157889198, guid: 6bf33f4a0cd16453b9a5677cccdf241d,
+    type: 3}
 --- !u!1 &6130174730686297453
 GameObject:
   m_ObjectHideFlags: 0

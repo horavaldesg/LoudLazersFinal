@@ -36,7 +36,7 @@ namespace FinerGames.PitchDetector.Demo
             
             if (endless)
             {
-                Debug.Log(pitchDetector.Pitch);
+                //Debug.Log(pitchDetector.Pitch);
                 if (pitchDetector.Pitch > 0)
                 {
                     //pitchDetector.enabled = false;
@@ -110,7 +110,7 @@ namespace FinerGames.PitchDetector.Demo
                 }
                 else if (pitchDetector.Pitch >= 100)
                 {
-                    Debug.Log("High");
+                    //Debug.Log("High");
                     player.GetComponentInChildren<ShootProjectile>().Shoot();
                 }
             }

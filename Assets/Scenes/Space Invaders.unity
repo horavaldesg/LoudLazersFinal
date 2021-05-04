@@ -455,7 +455,7 @@ PrefabInstance:
     - target: {fileID: 938357879476967282, guid: 9ae9cd919eb304c6582fab6e4f2741ae,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -644
+      value: -808
       objectReference: {fileID: 0}
     - target: {fileID: 938357879476967282, guid: 9ae9cd919eb304c6582fab6e4f2741ae,
         type: 3}
@@ -485,7 +485,7 @@ PrefabInstance:
     - target: {fileID: 938357879476967282, guid: 9ae9cd919eb304c6582fab6e4f2741ae,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -670
+      value: -837
       objectReference: {fileID: 0}
     - target: {fileID: 938357879476967282, guid: 9ae9cd919eb304c6582fab6e4f2741ae,
         type: 3}
@@ -506,6 +506,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Sound Visualizer Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 938357879476967286, guid: 9ae9cd919eb304c6582fab6e4f2741ae,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1220191069938525959, guid: 9ae9cd919eb304c6582fab6e4f2741ae,
         type: 3}
@@ -938,6 +943,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1066500275735484933, guid: 5c019022e6f4e49b78442c36c9237404,
+        type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1066500275735484933, guid: 5c019022e6f4e49b78442c36c9237404,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2659753422643631775, guid: 5c019022e6f4e49b78442c36c9237404,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3900242706910174373, guid: 5c019022e6f4e49b78442c36c9237404,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8192566e4ce7f264c90c029eda547836, type: 2}
     - target: {fileID: 5207571344629740945, guid: 5c019022e6f4e49b78442c36c9237404,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1404,6 +1429,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MicrophoneInput
+      objectReference: {fileID: 0}
+    - target: {fileID: 8279696225543643020, guid: 28e626b0c981c4245abd6df43627b11c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28e626b0c981c4245abd6df43627b11c, type: 3}
