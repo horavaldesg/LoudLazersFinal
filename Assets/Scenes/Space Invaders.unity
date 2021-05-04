@@ -1508,6 +1508,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3616973011609316572, guid: 3a507329e397c431c82f909c783dc338,
         type: 3}
+      propertyPath: move
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3616973011609316572, guid: 3a507329e397c431c82f909c783dc338,
+        type: 3}
       propertyPath: pitchDetector
       value: 
       objectReference: {fileID: 1363866928}

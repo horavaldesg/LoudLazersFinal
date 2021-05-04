@@ -33,7 +33,7 @@ public class SpawnEnemy : MonoBehaviour
     {
        
         //Debug.Log("Spawn");
-        speed = Random.Range(80, 125);
+        speed = Random.Range(80, 115);
         i = Random.Range(0,spawners.Length);
         int randomEnemies = Random.Range(0, enemies.Length);
         GameObject enemyObj = Instantiate(enemies[randomEnemies]);

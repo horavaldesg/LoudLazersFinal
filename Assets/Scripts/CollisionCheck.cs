@@ -6,7 +6,6 @@ public class CollisionCheck : MonoBehaviour
 {
     GameObject audioObj;
     public bool DestroyShip;
-    [SerializeField] ParticleSystem particleSystem;
     // Start is called before the first frame update
     private void Start()
     {
@@ -22,6 +21,7 @@ public class CollisionCheck : MonoBehaviour
                 audioObj.GetComponent<AudioSource>().Play();
                 Destroy(this.gameObject);
                 //Instantiate(particleSystem, other.transform.position, other.transform.rotation);
+                other.GetComponent<Collider>().enabled = false;
                 other.GetComponentInChildren<ParticleSystem>().Play();
                 other.GetComponent<SpriteRenderer>().enabled = false;
 

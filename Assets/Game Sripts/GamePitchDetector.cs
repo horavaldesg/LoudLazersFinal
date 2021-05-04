@@ -13,54 +13,65 @@ namespace FinerGames.PitchDetector.Demo
         [SerializeField] bool endless;
         [SerializeField] bool spaceInvaders;
         [SerializeField] RectTransform slider;
+        [SerializeField] float rotationSpeed = 4;
         float constant;
         float rotationValue = 45;
-
-        float move = 5;
+        float timer = 0;
+        [SerializeField]float move = 5;
         string[] hightNotes = { "A", "C", "D"};
         string[] lowNotes = {"E", "F", "G" };
         GameObject player;
         // Start is called before the first frame update
         void Start()
         {
-            
-            constant = rotationValue;
+
+            //constant = rotationValue;
+            constant = 2;
             player = GameObject.FindGameObjectWithTag("Player");
         }
 
         // Update is called once per frame
-        void Update()
+        void FixedUpdate()
         {
             //show middletone for player
             //visualize it
             
             if (endless)
             {
+                timer += Time.deltaTime;
                 //Debug.Log(pitchDetector.Pitch);
-                if (pitchDetector.Pitch > 0)
-                {
-                    //pitchDetector.enabled = false;
-                }
+                //if (pitchDetector.Pitch > 0)
+                //{
+                //    //pitchDetector.enabled = false;
+                //}
 
                 //if (Input.GetKey(KeyCode.Space))
                 //{
                 if (pitchDetector.Pitch > 0 && pitchDetector.Pitch < 150)
                 {
+                    timer = 0;
                     //if (slider.GetComponent<RectTransform>().position.y <= 278)
                     //{
                     //    Debug.Log("Down");
-                        slider.GetComponent<RectTransform>().position = new Vector3(slider.transform.position.x, slider.transform.position.y - 5, slider.transform.position.z);
+                    slider.GetComponent<RectTransform>().position = new Vector3(slider.transform.position.x, slider.transform.position.y - 5, slider.transform.position.z);
                     //}
                     //Debug.Log("Low");
-                    if (player.transform.rotation.y == -45)
+                    //if (player.transform.rotation.y == -45)
+                    //{
+                    //    constant = rotationValue;
+                        
+                    //}
+                    //else if (player.transform.rotation.y == 45)
+                    //{
+                    //    //timer = 0;
+                    //    constant = -rotationValue;
+                    //}
+                    if(timer == 0)
                     {
-                        constant = rotationValue;
+                        player.transform.Rotate(0, player.transform.rotation.y + rotationSpeed, 0);
+                        //constant = 0;
                     }
-                    else if (player.transform.rotation.y == 45)
-                    {
-                        constant = -rotationValue;
-                    }
-                    player.transform.Rotate(0, player.transform.rotation.y + constant, 0);
+                    
                     //pitchDetector.enabled = true;
 
                 }
@@ -100,7 +111,7 @@ namespace FinerGames.PitchDetector.Demo
                     {
                         move = -move;
                     }
-                    player.transform.position += new Vector3(move, 0, 0);
+                    player.transform.position += new Vector3(transform.position.x + move, 0, 0);
 
 
                 }
